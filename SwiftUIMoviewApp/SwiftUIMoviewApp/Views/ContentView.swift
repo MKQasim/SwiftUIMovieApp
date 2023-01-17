@@ -15,24 +15,24 @@ struct ContentView: View {
   }
   
   var body: some View {
-    VStack{
-      
-      TabView(selection: $currentTab) {
-        Text("Home")
-          .tag(Tab.home)
-        Text("Location")
-          .tag(Tab.location)
-        TicketView()
-          .tag(Tab.ticket)
-        Text("Cetegory")
-          .tag(Tab.category)
-        Text("Profile")
-          .tag(Tab.profile)
+    NavigationView {
+      VStack{
+        TabView(selection: $currentTab) {
+          HomeView()
+            .tag(Tab.home)
+          Text("Location")
+            .tag(Tab.location)
+          TicketView()
+            .tag(Tab.ticket)
+          Text("Cetegory")
+            .tag(Tab.category)
+          Text("Profile")
+            .tag(Tab.profile)
+        }
+        CustomTabbar(currentTab: $currentTab)
       }
-      CustomTabbar(currentTab: $currentTab)
+      .ignoresSafeArea(.keyboard)
     }
-    .ignoresSafeArea(.keyboard)
-    
   }
 }
 
