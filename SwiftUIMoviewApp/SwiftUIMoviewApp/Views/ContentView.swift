@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  @State var currentTab : Tab = .home
+  
+  init() {
+    UITabBar.appearance().isHidden = true
+  }
+  
+  var body: some View {
+    VStack{
+      
+      TabView(selection: $currentTab) {
+        Text("Home")
+          .tag(Tab.home)
+        Text("Location")
+          .tag(Tab.location)
+        TicketView()
+          .tag(Tab.ticket)
+        Text("Cetegory")
+          .tag(Tab.category)
+        Text("Profile")
+          .tag(Tab.profile)
+      }
+      CustomTabbar(currentTab: $currentTab)
     }
+    .ignoresSafeArea(.keyboard)
+    
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
