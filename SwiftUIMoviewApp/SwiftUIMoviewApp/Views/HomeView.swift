@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
   
-  
   @State var posters1 : [String] = ["poster1","poster2","poster3","poster4","poster5","poster6"]
   @State var posters2 : [String] = ["poster7","poster8","poster9","poster10","poster11","poster12"]
   @State var posters3 : [String] = ["poster13","poster14","poster15","poster16","poster17","poster18"]

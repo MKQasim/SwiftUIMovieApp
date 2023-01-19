@@ -1,9 +1,9 @@
-//
-//  ContentView.swift
-//  SwiftUIMoviewApp
-//
-//  Created by KamsQue on 13/01/2023.
-//
+  //
+  //  ContentView.swift
+  //  SwiftUIMoviewApp
+  //
+  //  Created by KamsQue on 13/01/2023.
+  //
 
 import SwiftUI
 
@@ -24,9 +24,9 @@ struct ContentView: View {
             .tag(Tab.location)
           TicketView()
             .tag(Tab.ticket)
-          Text("Cetegory")
+          BookingView()
             .tag(Tab.category)
-          Text("Profile")
+          SeatsView()
             .tag(Tab.profile)
         }
         CustomTabbar(currentTab: $currentTab)
@@ -37,7 +37,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
