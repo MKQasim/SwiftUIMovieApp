@@ -32,6 +32,7 @@ struct ScrollSection: View {
             }
           }
         }
+        
         .offset(x:20)
         .padding(.trailing,40)
       }

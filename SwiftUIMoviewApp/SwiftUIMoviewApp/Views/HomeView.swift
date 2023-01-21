@@ -48,10 +48,9 @@ struct HomeView: View {
           }
         }
         .frame(maxWidth: .infinity,maxHeight: .infinity ,alignment: .top)
-        
-        
       }
       .background(LinearGradient(colors: backgroundColors, startPoint: .top, endPoint: .bottom))
+      .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookingView: View {
-  
+  @Environment(\.dismiss) var dismiss
   @State var grediant : [Color] = [Color("backgroundColor2").opacity(0),Color("backgroundColor2"),Color("backgroundColor2"),Color("backgroundColor2")]
   @State var bindingSelection : Bool = true
   @State var selectedDate: Bool = false
@@ -28,7 +28,9 @@ struct BookingView: View {
       
       VStack {
         HStack(spacing: 0.0){
-          CircleButton(action: {},image: "arrow.left")
+          CircleButton(action: {
+            dismiss()
+          },image: "arrow.left")
           Spacer()
           CircleButton(action: {},image: "ellipsis")
         }
@@ -69,9 +71,6 @@ struct BookingView: View {
             .padding(.top,70)
           DateButton(weekDay: "Mon", numDay: "25", isSelected: $bindingSelection)
             .padding(.top,90)
-          
-          
-          
         }
         HStack(alignment: .top, spacing: 20.0) {
           TimeButton(hour: "16:00", isSelected: $bindingSelection)
@@ -105,6 +104,7 @@ struct BookingView: View {
     }
     .background(Color("backgroundColor2"))
     .ignoresSafeArea()
+    .navigationBarBackButtonHidden(true)
   }
 }
 

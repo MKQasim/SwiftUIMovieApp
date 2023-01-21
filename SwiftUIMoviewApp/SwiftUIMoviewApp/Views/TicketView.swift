@@ -13,7 +13,6 @@ struct TicketView: View {
   
     var body: some View {
       ZStack {
-       
           CircleBackground(color: Color("greenCircle"))
             .blur(radius: animate ? 30 : 100)
             .offset(x:animate ? -50 : -130,y:animate ? -30 : -100)
